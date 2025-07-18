@@ -6,7 +6,7 @@ int main() {
     printf("Digite seu nome: ");
     fgets(nome, sizeof(nome), stdin); // Lê o nome do usuário, incluindo espaços
 
-    printf("Olá, %s", nome); // Exibe o nome digitado
+    printf("hello, %s", nome); // Exibe o nome digitado
     return 0;
 }
 
