@@ -61,8 +61,8 @@ int main() {
     strcat(Codigo_da_carta2, Codigo_str2); 
 
     // Calculo de PIB per capita e densidade demogr�fica.
-    PIB_per_capita = PIB / Populacao; 
-    PIB_per_capita2 = PIB2 / Populacao2;
+    PIB_per_capita = ( PIB / Populacao ) * 1000000000;
+    PIB_per_capita2 = ( PIB2 / Populacao2 ) * 1000000000;
     densidade_demografica = Populacao / Area;
     densidade_demografica2 = Populacao2 / Area2;
 
@@ -75,7 +75,7 @@ int main() {
     printf("Area: %.2f KM�\n", Area);
     printf("PIB: %.2f Bilh�es de reais\n", PIB);
     printf("N�mero de pontos tur�sticos: %d\n", Numero_de_pontos_turisticos);
-    printf("PIB per capita: %.2f Bilh�es de reais\n", PIB_per_capita);
+    printf("PIB per capita: %.2f reais\n", PIB_per_capita);
     printf("Densidade demogr�fica: %.2f habitantes/KM�\n", densidade_demografica);
 
     printf("\nDados da carta 02:\n");
@@ -86,7 +86,7 @@ int main() {
     printf("Area: %.2f KM�\n", Area2);
     printf("PIB: %.2f Bilh�es de reais\n", PIB2);
     printf("N�mero de pontos tur�sticos: %d\n", Numero_de_pontos_turisticos2);
-    printf("PIB per capita: %.2f Bilh�es de reais\n", PIB_per_capita2);
+    printf("PIB per capita: %.2f reais\n", PIB_per_capita2);
     printf("Densidade demogr�fica: %.2f habitantes/KM�\n", densidade_demografica2);
 
     return 0;
