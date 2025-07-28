@@ -8,12 +8,14 @@ int main() {
 
     // Sele��o de vari�veis.
     char Estado, Nome_da_cidade [20], Codigo_da_carta [4], Codigo_str[3], Estado2, Nome_da_cidade2 [20], Codigo_da_carta2 [4], Codigo_str2[3];
+    char CompPop [20], CompArea[20], CompPIB[20], CompPontos[20], CompDensidade[20], CompPIBPerCapita[20];
     int Populacao, Numero_de_pontos_turisticos, Codigo, Populacao2, Numero_de_pontos_turisticos2, Codigo2;
     float PIB, Area, PIB2, Area2;
     float PIB_per_capita, PIB_per_capita2, densidade_demografica, densidade_demografica2;
+    float Super_Poder1, Super_Poder2;
     
     // Entrada de dados para carta 01.
-    printf("Bem-vindo ao Super Trunfo - Desafio Aventureiro!\n");
+    printf("Bem-vindo ao Super Trunfo - Desafio Mestre!\n");
     printf("Esta sera sua primeira carta (01) ent�o:\nDigite a letra 'A-H' que representa seu estado: ");
     scanf(" %c", &Estado);
     printf("Digite o c�digo da carta (2 digitos de 01-04): ");
@@ -66,6 +68,53 @@ int main() {
     densidade_demografica = Populacao / Area;
     densidade_demografica2 = Populacao2 / Area2;
 
+    // C��lculo dos Super Poderes.
+    Super_Poder1 = (float) Populacao + Area + PIB + (float) Numero_de_pontos_turisticos + PIB_per_capita + (1 / densidade_demografica);
+    Super_Poder2 = (float) Populacao2 + Area2 + PIB2 + (float) Numero_de_pontos_turisticos2 + PIB_per_capita2 + (1 / densidade_demografica2);
+
+    // Comparação dos Super Poderes e informações individuais.
+    if (Populacao > Populacao2) {
+        sprintf(CompPop, "Carta 01 ganhou!");
+    } else if (Populacao < Populacao2) {
+        sprintf(CompPop, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompPop, "Houve empate!");}
+
+    if (Area > Area2) {
+        sprintf(CompArea, "Carta 01 ganhou!");
+    } else if (Area < Area2) {
+        sprintf(CompArea, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompArea, "Houve empate!");}
+
+    if (PIB > PIB2) {
+        sprintf(CompPIB, "Carta 01 ganhou!");
+    } else if (PIB < PIB2) {
+        sprintf(CompPIB, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompPIB, "Houve empate!");}
+
+    if (Numero_de_pontos_turisticos > Numero_de_pontos_turisticos2) {
+        sprintf(CompPontos, "Carta 01 ganhou!");
+    } else if (Numero_de_pontos_turisticos < Numero_de_pontos_turisticos2) {
+        sprintf(CompPontos, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompPontos, "Houve empate!");}
+
+    if (densidade_demografica < densidade_demografica2) {
+        sprintf(CompDensidade, "Carta 01 ganhou!"); 
+    } else if (densidade_demografica > densidade_demografica2) {
+        sprintf(CompDensidade, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompDensidade, "Houve empate!");}
+
+    if (PIB_per_capita > PIB_per_capita2) {
+        sprintf(CompPIBPerCapita, "Carta 01 ganhou!");
+    } else if (PIB_per_capita < PIB_per_capita2) {
+        sprintf(CompPIBPerCapita, "Carta 02 ganhou!");
+    } else {
+        sprintf(CompPIBPerCapita, "Houve empate!");}
+
     // Impress�o dos dados.
     printf("\n\nDados da carta 01:\n");
     printf("Estado: %c\n", Estado);
@@ -77,6 +126,7 @@ int main() {
     printf("N�mero de pontos tur�sticos: %d\n", Numero_de_pontos_turisticos);
     printf("PIB per capita: %.2f reais\n", PIB_per_capita);
     printf("Densidade demogr�fica: %.2f habitantes/KM�\n", densidade_demografica);
+    printf("Super Poder: %.2f\n", Super_Poder1);
 
     printf("\nDados da carta 02:\n");
     printf("Estado: %c\n", Estado2);
@@ -88,6 +138,15 @@ int main() {
     printf("N�mero de pontos tur�sticos: %d\n", Numero_de_pontos_turisticos2);
     printf("PIB per capita: %.2f reais\n", PIB_per_capita2);
     printf("Densidade demogr�fica: %.2f habitantes/KM�\n", densidade_demografica2);
+    printf("Super Poder: %.2f\n", Super_Poder2);
+
+    printf("\nResultado do Duelo entre as cartas:\n\n");
+    printf("Popula����o: %s\n", CompPop);
+    printf("Área: %s\n", CompArea);
+    printf("PIB: %s\n", CompPIB);
+    printf("Número de pontos turísticos: %s\n", CompPontos);
+    printf("Densidade demográfica: %s\n", CompDensidade);
+    printf("PIB per capita: %s\n", CompPIBPerCapita);
 
     return 0;
 }
